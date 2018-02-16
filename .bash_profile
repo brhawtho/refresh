@@ -2,9 +2,9 @@ alias goto=cd
 
 # Find given directory and navigate to it
 go() {
-    if [[ $# -eq 0 || "$1" == "man" || "$1" == "help" ]]; then
+    if [[ $# -eq 0 || "$1" == "--help" ]]; then
         # display usage if no parameters given
-        echo "usage: go [dir]"
+        echo "usage: go [--help] [dir]"
         return
     else
         echo -e "$(tput setaf 1)leaving  $(tput sgr0)\c" && pwd
