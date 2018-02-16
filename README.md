@@ -1,15 +1,47 @@
 # Refresh
 
 ## Motivation
-This project started following the mentality of the Momentum chrome extension. I started to get sick of my old desktop backgrounds, so I decided it was time for a change.
+Refresh started as a way to kill the routine, the daily grind, the same old, same old. This simple project is meant to update your desktop background with a randomized photo from a selection of randomized wallpapers. Refresh has the same motivation as the team over at [Momentum](https://momentumdash.com/) - provide inspiration, focus, and productivity.
 
-## Time to Change
-As I started to use Momentum more and more, I started to realize how seeing a nice picture could really change your mood for the day. Rather than being stuck with the "same old, same old" you could see a beautiful photo. I started to grab some of these photos from Momentum, saving them and setting them on rotation as my desktop background. I figured this would keep me away from getting bored of beautiful photos.
+---
 
-This project is the next step.
+## Setup
+It's easy. First, grab yourself a copy of the repo.
+```
+$ cd ~
+$ git clone https://github.com/brhawtho/refresh.git
+$ cd refresh
+```
 
-## What is Refresh
-In the end, I hope this repo will store all of my favorite images that work as desktop photos. I hope to eventually set an alias on my .bash_profile such that I can type 'refresh', and my background will switch to a randomized photo from this repo.
+Copy the .bash_profile to your home directory.
+**Warning:** this step will overwrite any existing .bash_profile, so if you already have a profile, please just copy/pasta the contents from our .bash_profile.
+```
+$ cp .bash_profile ~
+$ cd ~
+$ . .bash_profile
+```
+
+Now you will have access to two new commands, `go` and `refresh`.
+
+### $ go <dir>
+Go is an alias Bryce set up that will do some quick navigation for users. Simply type:
+```
+go <dir>
+```
+and `go` will do the rest. It will perform a `find` search from your home directory and navigate to the found directory with the shortest path. Use:
+```
+go --help
+```
+for more information
+
+### $ refresh
+Refresh is the alias that makes it all happen. It uses `go` to navigate to the _refresh_ directory you copied during setup, sets the background, and returns to your home directory, clearing up a cluttered terminal in the process.
+
+---
 
 ## Credit
-For now, all credit for these images goes to the Momentum team, and the respective owners. I'm just adding them to this directory so I can work with them a bit easier! Updates to come.
+### [Bryce Hawthorne](https://github.com/brhawtho)
+A newbie to Software Engineering, he decided to start working with Chrome extensions and bash scripts. Given enough time and boredom, he came up with `go`, a simple alias that enhances the `cd` command. From there, it was only up - eventually leading him to `refresh`.
+
+### [Momentum](https://momentumdash.com/)
+All credit for these images goes to the Momentum team, and the respective owners. I'm just adding them to this directory so I can work with them a bit easier! Updates to come.
