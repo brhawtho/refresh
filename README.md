@@ -24,15 +24,7 @@ $ . .bash_profile
 Now you will have access to two new commands, `go` and `refresh`.
 
 ### $ go <dir>
-Go is an alias Bryce set up that will do some quick navigation for users. Simply type:
-```
-go <dir>
-```
-and `go` will do the rest. It will perform a `find` search from your home directory and navigate to the found directory with the shortest path. Use:
-```
-go --help
-```
-for more information
+Go is an alias Bryce set up that will do some quick navigation for users. Simply type `go <dir>` and `go` will do the rest. It will perform a `find` search from your home directory and navigate to the found directory with the shortest path. Use `go --help` for more information
 
 ### $ refresh
 Refresh is the alias that makes it all happen. It uses `go` to navigate to the _refresh_ directory you copied during setup, sets the background, and returns to your home directory, clearing up a cluttered terminal in the process.
