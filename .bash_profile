@@ -32,7 +32,7 @@ refresh() {
     cp "$(ls | sort --random-sort | head -n 1)" ../wallpaper.jpg
     cd ..
     osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/Users/brycehawthorne/Documents/projects/refresh/reset.jpg"'
-    sleep .1
+    sleep .5
     osascript -e 'tell application "Finder" to set desktop picture to POSIX file "/Users/brycehawthorne/Documents/projects/refresh/wallpaper.jpg"'
     go home
     clear
