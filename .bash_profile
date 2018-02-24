@@ -1,6 +1,9 @@
+# define global aliases used elsewhere
 alias goto=cd
 
-# Find given directory and navigate to it
+# go dir
+# dir - directory to find and navigate to
+# function will change directory to the shortest path to the named directory, printing the full path when found
 go() {
     if [[ $# -eq 0 || "$1" == "--help" ]]; then
         # display usage if no parameters given
@@ -25,7 +28,8 @@ go() {
     fi
 }
 
-# Do background change from anywhere
+# refresh
+# function uses `go` to navigate to refresh repo folder, change background, and return the user home. Reloads the dock.
 refresh() {
     go refresh
     cd wallpapers
