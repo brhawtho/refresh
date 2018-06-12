@@ -35,11 +35,14 @@ function go() {
         return
     fi
 
-    # else find shortest path to directory
-    if [[ -z $DIR ]]; then
+    if [[ -z $DIR ]]; then # no arguments, go home
         dir="${HOME}"
     else
-        dir="$(find ~ -type d -path '*/\.*' -prune -o -not -name '.*' -iname $DIR -print | sort -d | head -n1)"
+        if [[ ${DIR:0:1} == '.' ]]; then # user wants to find hidden dir
+            dir="$(find ~ -iname $DIR | sort -d | head -n1)"
+        else
+            dir="$(find ~ -type d -path '*/\.*' -prune -o -not -name '.*' -iname $DIR -print | sort -d | head -n1)"
+        fi
     fi
 
     curr="$(pwd)"
