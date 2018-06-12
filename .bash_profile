@@ -39,7 +39,7 @@ function go() {
     if [[ -z $DIR ]]; then
         dir="${HOME}"
     else
-        dir="$(find ~ -iname $DIR | sort -n | head -n1)"
+        dir="$(find ~ -type d -path '*/\.*' -prune -o -not -name '.*' -iname $DIR -print | sort -d | head -n1)"
     fi
 
     curr="$(pwd)"
