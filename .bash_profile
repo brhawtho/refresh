@@ -70,7 +70,9 @@ function refresh() {
 
     # change wallpaper randomly
     cp "$(ls | sort --random-sort | head -n1)" ../wallpaper.jpg
-    sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '/Users/brycehawthorne/Documents/projects/refresh/wallpaper.jpg'"
+    cd ..
+    curr="$(pwd)"
+    sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '$curr/wallpaper.jpg'"
     killall Dock
 
     # clean up terminal
