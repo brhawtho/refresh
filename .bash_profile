@@ -72,7 +72,7 @@ function refresh() {
     cp "$(ls | sort --random-sort | head -n1)" ../wallpaper.jpg
     cd ..
     curr="$(pwd)"
-    sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '$curr/wallpaper.jpg'"
+    sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '$(pwd)/wallpaper.jpg'"
     killall Dock
 
     # clean up terminal
