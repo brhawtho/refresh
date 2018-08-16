@@ -69,11 +69,11 @@ function refresh() {
     cd wallpapers
 
     # change wallpaper randomly
-    cp "$(ls | sort --random-sort | head -n1)" ../wallpaper.jpg
+    cp "$(ls | sort --random-sort | head -n1)" ../temp.jpg
     cd ..
-    curr="$(pwd)"
-    sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '$(pwd)/wallpaper.jpg'"
+    sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '$(pwd)/temp.jpg'"
     killall Dock
+    rm temp.jpg
 
     # clean up terminal
     go
