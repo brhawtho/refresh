@@ -73,7 +73,6 @@ function refresh() {
     cd ..
     sqlite3 ~/Library/Application\ Support/Dock/desktoppicture.db "update data set value = '$(pwd)/temp.jpg'"
     killall Dock
-    rm temp.jpg
 
     # clean up terminal
     go
