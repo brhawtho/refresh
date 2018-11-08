@@ -41,7 +41,7 @@ function go() {
         if [[ ${DIR:0:1} == '.' ]]; then # user wants to find hidden dir
             dir="$(find ~ -s -iname $DIR | sort -d | head -n1)"
         else
-            dir="$(find ~ -type d -path '*/\.*' -prune -o -not -name '.*' -iname $DIR -print | sort -d | head -n1)"
+            dir="$(find ~ -type d -path '*/\.*' -prune -o -not -name '.*' -iname $DIR -print 2>&1 | grep -v find | sort -d | head -n1)"
         fi
     fi
 
