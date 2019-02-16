@@ -13,12 +13,9 @@ $ git clone https://github.com/brhawtho/refresh.git
 $ cd refresh
 ```
 
-Copy the .bash_profile to your home directory.
-**Warning:** this step will overwrite any existing .bash_profile, so if you already have a profile, please just copy/pasta the contents from our .bash_profile.
+Add our .bash_profile contents to yours.
 ```
-$ cp .bash_profile ~
-$ cd ~
-$ . .bash_profile
+$ cat .bash_profile >> ~/.bash_profile
 ```
 
 Now you will have access to two new commands, `go` and `refresh`.
